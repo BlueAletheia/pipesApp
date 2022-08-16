@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -23,12 +24,40 @@ export class NoComunesComponent {
   };
 
   cambiarCliente() {
-
     this.nombre = 'Melissa';
-    this.genero= 'femenino';
+    this.genero = 'femenino';
   }
 
   borrarCliente() {
     this.clientes.pop();
   }
+
+  //keyvalue
+  persona = {
+    nombre: 'Alicia',
+    edad: 24,
+    direccion: 'mi casa',
+  };
+
+  //json
+  heroes = [
+    {
+      nombre: 'Spiderman',
+      vuela: false,
+    },
+    {
+      nombre: 'Ironman',
+      vuela: true,
+    },
+    {
+      nombre: 'Dr Strange',
+      vuela: true,
+    },
+  ];
+  miObservable = interval(1000);
+  valorPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Tenemos data promesa');
+    }, 3500);
+  });
 }
